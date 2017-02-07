@@ -44,7 +44,7 @@ namespace AgileAPI
                 ContactIds = contactIds,
             };
 
-            var response = await crm.RequestAsync($"notes", HttpMethod.Post, null).ConfigureAwait(false);
+            var response = await crm.RequestAsync($"notes", HttpMethod.Post, JsonConvert.SerializeObject(createNoteRequest)).ConfigureAwait(false);
 
             return JsonConvert.DeserializeObject<Note>(response);
         }
