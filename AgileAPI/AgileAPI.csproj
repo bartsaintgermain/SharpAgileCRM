@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <AssemblyName>SharpAgileCRM</AssemblyName>
-    <TargetFrameworks>netstandard1.6;net461</TargetFrameworks>
+    <TargetFrameworks>netstandard1.6;net461;net45</TargetFrameworks>
     <RuntimeIdentifiers>win7-x64</RuntimeIdentifiers>
   </PropertyGroup>
   <ItemGroup>
@@ -16,6 +16,8 @@
     <Reference Include="System.Web" />
     <PackageReference Include="System.Net.Http" Version="4.3.0" />
   </ItemGroup>
-  <ItemGroup Condition="$(TargetFramework) == 'netstandard1.6'">
+  <ItemGroup Condition="$(TargetFramework) == 'net45'">
+    <Reference Include="System.Web" />
+    <PackageReference Include="System.Net.Http" Version="4.3.0" />
   </ItemGroup>
 </Project>
