@@ -35,7 +35,7 @@ namespace AgileAPI
         /// <returns>
         /// The created note
         /// </returns>
-        public static async Task<Note> CreateContactNote(AgileCRM crm, string subject, string description, List<long> contactIds)
+        public static async Task<Note> CreateContactNoteAsync(AgileCRM crm, string subject, string description, List<long> contactIds)
         {
             var createNoteRequest = new CreateNoteRequest()
             {
@@ -61,7 +61,7 @@ namespace AgileAPI
         /// <returns>
         /// The notes related to a contact.
         /// </returns>
-        public static async Task<List<Note>> GetContactNotes(AgileCRM crm, long contactId)
+        public static async Task<List<Note>> GetContactNotesAsync(AgileCRM crm, long contactId)
         {
             var response = await crm.RequestAsync($"contacts/{contactId}/notes", HttpMethod.Get, null).ConfigureAwait(false);
             return JsonConvert.DeserializeObject<List<Note>>(response);
