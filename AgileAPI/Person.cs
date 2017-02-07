@@ -86,6 +86,17 @@ namespace AgileAPI
         }
 
         /// <summary>
+        /// Gets the contact identifier of this person.
+        /// </summary>
+        public long ContactId
+        {
+            get
+            {
+                return this.Contact.Id;
+            }
+        }
+
+        /// <summary>
         /// Gets or sets the first name of the person.
         /// </summary>
         public string FirstName
