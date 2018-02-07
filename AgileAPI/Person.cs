@@ -519,5 +519,11 @@ namespace AgileAPI
                 return false;
             }
         }
+        
+        /// <inheritdoc/>
+        public override string ToString()
+        {
+            return $"{this.FirstName} {this.LastName}";
+        }
     }
 }
